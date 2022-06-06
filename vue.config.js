@@ -45,5 +45,16 @@ module.exports = {
         config.module
             .rule('images')
             .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+        
+        
+//           // 2. 配置svg-sprite-loader仅加载icons/svg中的图标
+//     config.module
+//       .rule("icons") // 规则存在就查询，不存在就创建
+//       .test(/\.svg$/) // 仿照vue inspect --rule svg 审查语法来写 所有以svg结尾的import使用这个规则
+//       .include.add(selfResolve("src/icons"))
+//       .end() // 找回this上下文 -- 当前的icons规则
+//       .use("svg-sprite-loader") // 先use再loader
+//       .loader("svg-sprite-loader")
+//       .options({ symbolId: "icon-[name]" }); // 使用图标的方式 icon-文件名
     }
 }
